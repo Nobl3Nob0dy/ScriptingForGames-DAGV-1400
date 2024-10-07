@@ -5,11 +5,14 @@ using UnityEngine;
 public class CharacterAnimationController : MonoBehaviour
 {
     private Animator animator;
+    public CharacterController controller;
+
     
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        controller = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -22,21 +25,30 @@ public class CharacterAnimationController : MonoBehaviour
     {
         if (Input.GetAxis("Horizontal") != 0)
         {
-            animator.SetTrigger("Run");
-        }
-        else
+            animator.SetTrigger("Run_Trigger");
+        } else
         {
             animator.SetTrigger("Idle");
         }
-
-        if (Input.GetButtonDown("Jump"))
+        
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             animator.SetTrigger("Jump_Trigger");
         }
-
+        
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            animator.SetTrigger("DoubleJump_Trigger");
+        }
+        
         if (Input.GetKeyDown(KeyCode.W))
         {
-            animator.SetTrigger("WallJump");
+            animator.SetTrigger("WallJump_Trigger");
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            animator.SetTrigger("Hit_Trigger");
         }
     }
 }
