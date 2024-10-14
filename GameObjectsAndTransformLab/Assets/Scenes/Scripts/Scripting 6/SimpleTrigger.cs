@@ -5,11 +5,18 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class SimpleTrigger : MonoBehaviour
-{
+{ 
     public UnityEvent triggerEvent;
-    private void OnTriggerEnter(Collider other)
+    private Animator animator;
+    
+    void start()
+    {
+        animator = GetComponent<Animator>();
+    }
+    public void OnTriggerEnter(Collider other)
     {
         triggerEvent.Invoke();
         Debug.Log("Player interacted with object");
+        animator.SetTrigger("Hit_Trigger");
     }
 }
