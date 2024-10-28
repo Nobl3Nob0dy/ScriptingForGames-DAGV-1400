@@ -18,5 +18,6 @@ public class SimpleTrigger : MonoBehaviour
         triggerEvent.Invoke();
         Debug.Log("Player interacted with object");
         animator.SetTrigger("Hit_Trigger");
+        
     }
 }
