@@ -3,16 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
 public class SimpleTrigger : MonoBehaviour
 { 
     public UnityEvent triggerEvent;
     private Animator animator;
     
-    void start()
+    public void Update()
     {
-        animator = GetComponent<Animator>();
+        GetInput();
     }
+    
+    public void GetInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            triggerEvent.Invoke();
+            Debug.Log("Player casted a Spell");
+            animator.SetTrigger("DoubleJump_Trigger");
+        }
+    }
+    
     public void OnTriggerEnter(Collider other)
     {
         triggerEvent.Invoke();

@@ -36,10 +36,10 @@ public class CharacterAnimationController : MonoBehaviour
             animator.SetTrigger("Jump_Trigger");
         }
         
-        if (Input.GetKeyDown(KeyCode.Q))
+        /*if (Input.GetKeyDown(KeyCode.Q))
         {
             animator.SetTrigger("DoubleJump_Trigger");
-        }
+        }*/
         
         if (Input.GetKeyDown(KeyCode.W))
         {
