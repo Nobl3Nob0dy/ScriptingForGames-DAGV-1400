@@ -7,7 +7,6 @@ public class SimpleTrigger : MonoBehaviour
 { 
     public UnityEvent triggerEvent;
     private Animator animator;
-    
     public void Update()
     {
         GetInput();
