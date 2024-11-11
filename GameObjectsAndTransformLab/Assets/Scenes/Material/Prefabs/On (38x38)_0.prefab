@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 5921306631841926622}
   - component: {fileID: 9153720699543585146}
   - component: {fileID: -1088317608173528858}
-  - component: {fileID: 5120082802448441754}
+  - component: {fileID: 8022348885180953085}
+  - component: {fileID: 6908400334888129727}
   m_Layer: 0
   m_Name: On (38x38)_0
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,7 +133,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.38, y: 0.38, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5120082802448441754
+--- !u!114 &8022348885180953085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6025411297647479746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fa4f351df280e488e99ca870517e55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6908400334888129727
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,16 +162,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []

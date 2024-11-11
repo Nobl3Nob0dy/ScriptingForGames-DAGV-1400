@@ -9,6 +9,11 @@ public class TextMechProBehavior : MonoBehaviour
 {
     private TextMeshProUGUI txtObj;
     public SimpleIntData intData;
+    private bool ifTriggered = false;
+
+    public bool txtTrigger = false;
+
+    public float txtTime = 0.7f;
     
     // Start is called before the first frame update
     private void Start()
@@ -25,4 +30,5 @@ public class TextMechProBehavior : MonoBehaviour
     {
         txtObj.text = intData.value.ToString(CultureInfo.InvariantCulture);
     }
+    
 }
