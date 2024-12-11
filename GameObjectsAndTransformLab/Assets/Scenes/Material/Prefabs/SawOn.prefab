@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1713596698274103536}
   - component: {fileID: 1214605970156711744}
   m_Layer: 0
-  m_Name: On (38x38)_0
+  m_Name: SawOn
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
