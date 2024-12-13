@@ -1,2 +1,14 @@
 fileFormatVersion: 2
 guid: 93e8a15a90e82aa4982f72d4075af492
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - healthData: {fileID: 11400000, guid: 4d9cf770e7b7fc84486282e6cc0c17e5, type: 2}
+  - manaData: {fileID: 11400000, guid: ed2c04a209c3d404e95af3bfc928c5ff, type: 2}
+  - staminaData: {fileID: 11400000, guid: cb5c5105ae6d8d64ebb2970cad16b167, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

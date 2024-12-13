@@ -9,10 +9,11 @@ public class SimpleTrigger : MonoBehaviour
 { 
     
     public UnityEvent triggerEvent;
-    private Animator animator;
-    
-    //public Collider cherryCollider;
-    //public Collider sawCollider;
+    private Animator _animator;
+
+    private SimpleFloatData manaData;
+    public SimpleFloatData manaNeed;
+
     public void Update()
     {
         GetInput();
@@ -24,28 +25,35 @@ public class SimpleTrigger : MonoBehaviour
         {
             triggerEvent.Invoke();
             Debug.Log("Player casted a Spell");
-            animator.SetTrigger("DoubleJump_Trigger");
+            _animator.SetTrigger("DoubleJump_Trigger");
+            
         }
     }
     
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {
             triggerEvent.Invoke();
             Debug.Log("Player got hit");
-            animator.SetTrigger("Hit_Trigger");
+            _animator.SetTrigger("Hit_Trigger");
         }
-    }
+        if (other.gameObject.tag == "Item")
+        {
+            triggerEvent.Invoke();
+            Debug.Log("Player collected cherry");
+            _animator.SetTrigger("Collect_Trigger");
+        }
+    }*/
 
-    private void OnTriggerExit(Collider other)
+    /*private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Item")
         {
             triggerEvent.Invoke();
             Debug.Log("Player collected cherry");
-            animator.SetTrigger("Collect_Trigger");
+            _animator.SetTrigger("Collect_Trigger");
         }
-    }
+    }*/
     
 }

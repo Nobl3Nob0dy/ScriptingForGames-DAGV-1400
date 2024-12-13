@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,10 @@ public class ContainerUpdate : MonoBehaviour
     public void ReduceHealth(float amount)
     {
         healthData.UpdateValue(amount);
+        if (healthData.value < amount)
+        {
+            
+        }
     }
 
     public void ReduceMana(float amount)

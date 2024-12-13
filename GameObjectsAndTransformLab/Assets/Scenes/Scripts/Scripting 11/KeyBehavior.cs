@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class SimpleIDBehavior : MonoBehaviour
+public class KeyBehavior : MonoBehaviour
 {
     public ID id;
-    public UnityEvent matchEvent, noMatchEvent;
+    public UnityEvent keyState, noMatch;
+    // Start is called before the first frame update
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,13 +15,13 @@ public class SimpleIDBehavior : MonoBehaviour
 
         if (otherID.id == id)
         {
-            matchEvent.Invoke();
-            Debug.Log("Matched ID: " + id);
+            keyState.Invoke();
+            //Debug.Log("Correct Key: " + id);
         }
         else
         {
-            noMatchEvent.Invoke();
-            Debug.Log("No Match: " + id);
+            noMatch.Invoke();
+            //Debug.Log("No Match Found");
         }
     }
 }
