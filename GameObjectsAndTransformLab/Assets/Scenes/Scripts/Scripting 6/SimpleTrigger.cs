@@ -25,7 +25,7 @@ public class SimpleTrigger : MonoBehaviour
         {
             triggerEvent.Invoke();
             Debug.Log("Player casted a Spell");
-            _animator.SetTrigger("DoubleJump_Trigger");
+            _animator.SetTrigger($"DoubleJump_Trigger");
             
         }
     }

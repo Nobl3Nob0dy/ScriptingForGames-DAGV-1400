@@ -5,37 +5,38 @@ using UnityEngine.AI;
 
 public class NavMeshNav : MonoBehaviour
 {
-    public Transform player;
-
+    public Transform target;
     public NavMeshAgent navAgent;
-
     private NavMeshPath navPath;
+    public Transform[] wayPoints;
 
-    private float timeElapsed = 0.0f;
-
+    public Animator _animator;
+    private float timeElapsed = 0.1f;
+    
     // Start is called before the first frame update
     void Start()
     {
         navAgent = GetComponent<NavMeshAgent>();
-
         navPath = new NavMeshPath();
-
         timeElapsed = 0.0f;
+        
+        StartCoroutine(FollowTarget());
     }
 
+    private IEnumerator FollowTarget()
+    {
+        WaitForSeconds wait = new WaitForSeconds(timeElapsed);
+
+        while (enabled)
+        {
+            navAgent.SetDestination(target.position);
+            yield return wait;
+        }
+    }
+    
     // Update is called once per frame
     void Update()
     {
-        //Set the timeElapsed as the amount of time passed it Time.deltaTime
-        timeElapsed += Time.deltaTime;
-
-        //Set the function to run as long as any amount of time has passed
-        if (timeElapsed > 1.0f)
-        {
-            //Increase the timeElapsed by 1 
-            timeElapsed -= 1.0f;
-            //Calculate the NavMesh from the enemy position to the player position
-            navAgent.SetDestination(player.position);
-        }
+        _animator.SetBool($"isMoving", navAgent.velocity.magnitude > 0.01f);
     }
 }

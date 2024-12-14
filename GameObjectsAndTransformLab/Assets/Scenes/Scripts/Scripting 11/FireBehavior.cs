@@ -33,13 +33,13 @@ public class FireBehavior : MonoBehaviour
         {
             if (_animator.GetCurrentAnimatorStateInfo(0).IsName("fireOn"))
             {
-                _animator.SetBool("fireToggle", false);
+                _animator.SetBool($"fireToggle", false);
                 Destroy(transform.GetChild(0).gameObject);
             }
 
             if (_animator.GetCurrentAnimatorStateInfo(0).IsName("fireOff"))
             {
-                _animator.SetBool("fireToggle", true);
+                _animator.SetBool($"fireToggle", true);
                 Instantiate(transform.GetChild(0).gameObject, transform.GetChild(0).transform.position, Quaternion.identity);
             }
             Debug.Log("Correct Key: " + id);

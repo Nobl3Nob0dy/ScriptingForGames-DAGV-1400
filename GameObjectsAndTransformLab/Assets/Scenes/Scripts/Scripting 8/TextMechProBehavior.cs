@@ -9,7 +9,7 @@ public class TextMechProBehavior : MonoBehaviour
 {
     private TextMeshProUGUI txtObj;
     public SimpleIntData intData;
-    private bool ifTriggered = false;
+    //private bool ifTriggered = false;
 
     public bool txtTrigger = false;
 
